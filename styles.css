@@ -2,8 +2,18 @@ body {
   background-color: black;
   color: white;
   text-shadow: 3px 3px black;
-  height: 100vh;
-  min-width: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  min-height: 100vh;
+  background-image: url("images/simone.jpg");
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+  background-position: 0 200px;
+  background-size: cover;
 }
 
 h1 {
@@ -24,6 +34,7 @@ header {
   font-family: 'Vast Shadow';
   margin: 0;
   width: 100%;
+
 }
 section {
   display: flex;
@@ -89,6 +100,20 @@ audio {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
+button {
+  height: 3em;
+  width: 3em;
+  border-radius: 15px;
+  background-image: url("images/button2.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  margin
+}
+
+section.results {
+=======
 .results {
   background-image: url("images/simone.jpg");
   background-color: transparent;
@@ -97,6 +122,14 @@ audio {
   background-position: center;
   background-size: cover;
   height: 100%;
+>>>>>>> master
   margin: 0;
   width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
