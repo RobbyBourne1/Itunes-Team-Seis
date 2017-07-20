@@ -10,11 +10,12 @@ body,
 html {
   min-height: 100vh;
   background-image: url("images/simone.jpg");
-  background-color: transparent;
   background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
   background-repeat: no-repeat;
-  background-position: 0 150px;
-  background-size: cover;
+  background-attachment: fixed;
+  background-position: 0;
+  background-size: 100%;
 }
 
 h1 {
@@ -63,7 +64,6 @@ li {
   display: flex;
   flex-basis: 25%;
   flex-flow: row;
-  flex-basis: 25%;
 }
 
 a {
@@ -85,7 +85,7 @@ span {
 }
 
 input {
-  width:20em;
+  width: 20em;
   height: 2.5em;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, .5);
@@ -102,28 +102,13 @@ audio {
   border-radius: 15px;
 }
 
-
-button {
-  height: 3em;
-  width: 3em;
-  border-radius: 15px;
-  background-image: url("images/button2.jpg");
-  background-size: contain;
-  position: relative;
-  top: 8px;
-}
-
-
 .results {
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.6);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-height: 100vh;
   margin: 0;
-  width: 100%;
-
 }
 
 input:focus,
@@ -132,33 +117,28 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+
 @media screen and (max-width: 600px) {
   header {
     display: flex;
-    flex-direction: column;
-    padding: 1em 0.5em 0 3.4em;
-    text-align: center;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
   }
   h1 {
-    width: 100%;
-    padding-top: 2em;
+    padding-top: 1em;
     text-align: center;
+    margin: 0;
   }
 
-  ul {
-    display: flex;
-    flex-flow: column;
-    list-style: none;
-    align-items: center;
-    width: 100%;
-  }
   section {
     display: flex;
     justify-content: center;
-    margin: 0em 4em .5em 10em;
+    margin: 1em;
   }
   .search-info {
     padding: 0;
-    padding-right: 2em;
+    padding-right: 1em;
   }
 }
