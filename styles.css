@@ -3,9 +3,11 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-body, html {
+body,
+html {
   min-height: 100vh;
   background-image: url("images/simone.jpg");
   background-color: transparent;
@@ -36,7 +38,6 @@ header {
   font-family: 'Vast Shadow';
   margin: 0;
   width: 100%;
-
 }
 section {
   display: flex;
@@ -62,6 +63,7 @@ li {
   display: flex;
   flex-basis: 25%;
   flex-flow: row;
+  flex-basis: 25%;
 }
 
 a {
@@ -100,7 +102,7 @@ audio {
   border-radius: 15px;
 }
 
-<<<<<<< HEAD
+
 button {
   height: 3em;
   width: 3em;
@@ -109,7 +111,6 @@ button {
   background-size: contain;
   position: relative;
   top: 8px;
-  margin
 }
 
 
@@ -122,6 +123,7 @@ button {
   height: 100%;
   margin: 0;
   width: 100%;
+
 }
 
 input:focus,
@@ -129,4 +131,34 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0.5em 0 3.4em;
+    text-align: center;
+  }
+  h1 {
+    width: 100%;
+    padding-top: 2em;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: column;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    margin: 0em 4em .5em 10em;
+  }
+  .search-info {
+    padding: 0;
+    padding-right: 2em;
+  }
 }
