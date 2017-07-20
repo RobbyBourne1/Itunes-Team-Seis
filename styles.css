@@ -77,27 +77,16 @@ input {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding-left: .75em;
-  background-color: transparent
+  background-color: transparent;
 }
 
-input:focus{
-  border: none
+input:focus {
+  border: none;
 }
 
 audio {
   width: 380px;
   border-radius: 10px;
-}
-
-button {
-  height: 3em;
-  width: 3em;
-  border-radius: 15px;
-  background-image: url("images/button2.jpg");
-  background-size: contain;
-  position: relative;
-  top: 8px;
-  margin
 }
 
 .results {

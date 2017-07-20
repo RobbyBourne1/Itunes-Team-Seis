@@ -6,6 +6,7 @@ const maxDescLength = 10
 
 let input = document.querySelector('input')
 let button = document.querySelector('button')
+let form = document.querySelector('form')
 let search = input.value
 let url = 'https://itunes.apple.com/search?term='
 input.autofocus = 'on'
@@ -61,13 +62,12 @@ let searchInput = query => {
   })
 }
 
-button.addEventListener('submit', event => {
+form.addEventListener('submit', event => {
+  event.stopPropagation()
+  event.preventDefault()
   searchInput(search)
-  console.log(input.value)
 })
 
 input.addEventListener('keyup', event => {
-  event.stopPropagation()
-  event.preventDefault()
   searchInput(input.value)
 })
