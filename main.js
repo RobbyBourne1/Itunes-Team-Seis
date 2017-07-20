@@ -11,8 +11,10 @@
 //the following deals with the search bar and submit button event listeners
 let input = document.querySelector('input')
 let button = document.querySelector('button')
+let search = input.value
 
 button.addEventListener('submit', function(event){
   //this is where you tie the api in
+
   event.preventDefault()
 })
