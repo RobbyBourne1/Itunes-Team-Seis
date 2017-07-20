@@ -19,7 +19,8 @@ button.addEventListener('submit', function(event){
 // searchButton.addEventListener("click", function(){
 //     let searchTerm = search.value
 //     const promise =
-let url = "https://itunes.apple.com/search?term=jack+johnson"
+let searchTerm = ""
+let url = "https://itunes.apple.com/search?"
 fetch(url)
         .then ( response => response.json () )
         .then ( artist => {
@@ -51,4 +52,3 @@ fetch(url)
 // 3. Create your `fetch` request that is called after a submission
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
-
