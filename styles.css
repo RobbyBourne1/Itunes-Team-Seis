@@ -1,19 +1,37 @@
 body {
-  background-color: #60d9f1;
-  color: purple;
+  background-color: black;
+  color: white;
+  text-shadow: 3px 3px black;
   height: 100vh;
+  min-width: 100vh;
 }
 
 h1 {
   text-align: center;
   font-size: 2em;
+  margin: 0em 2em .5em 4em;
+  text-transform: uppercase;
 }
 
+header {
+  display: flex;
+  align-items: flex-end;
+  background-image: url("images/lee-campbell-242267.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 15em;
+  font-family: 'Vast Shadow';
+  margin: 0;
+  width: 100%;
+}
 section {
   display: flex;
   /*flex-flow: row;*/
   justify-content: center;
-  align-items: center;
+  margin: 0em 2em .5em 10em;
+
+  /*align-items: baseline;*/
 }
 
 ul {
@@ -50,4 +68,34 @@ div {
 
 span {
   font-size: 1.2em;
+}
+
+input {
+  width: 300px;
+  height: 2.5em;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding-left: .75em;
+  background-color: transparent
+}
+
+input:focus{
+  border: none
+}
+
+audio {
+  width: 380px;
+  border-radius: 10px;
+}
+
+button {
+  height: 3em;
+  width: 3em;
+  border-radius: 15px;
+  background-image: url("images/button2.jpg");
+  background-size: contain;
+  position: relative;
+  top: 8px;
+  margin
 }
