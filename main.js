@@ -6,6 +6,15 @@ let audioPlayer = document.querySelector(".music-player")
 let searchBar = document.querySelector(".search-bar")
 let searchButton = document.querySelector(".search-button")
 
+let input = document.querySelector('input')
+let button = document.querySelector('button')
+let search = input.value
+
+button.addEventListener('submit', function(event){
+  //this is where you tie the api in
+
+  event.preventDefault()
+})
 
 // searchButton.addEventListener("click", function(){
 //     let searchTerm = search.value
@@ -42,3 +51,4 @@ fetch(url)
 // 3. Create your `fetch` request that is called after a submission
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
+
