@@ -88,11 +88,11 @@ input {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding-left: .75em;
-  background-color: transparent
+  background-color: transparent;
 }
 
-input:focus{
-  border: none
+input:focus {
+  border: none;
 }
 
 audio {
@@ -100,6 +100,7 @@ audio {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
 button {
   height: 3em;
   width: 3em;
@@ -112,6 +113,16 @@ button {
 }
 
 section.results {
+=======
+.results {
+  background-image: url("images/simone.jpg");
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+>>>>>>> master
   margin: 0;
   width: 100%;
 }
