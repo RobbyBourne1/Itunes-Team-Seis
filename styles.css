@@ -5,9 +5,21 @@ url(https://fonts.googleapis.com/css?family=Abril+Fatface|Quicksand);
 body {
   background-color: black;
   color: white;
-  text-shadow: 3px 3px black;
-  height: 100vh;
-  min-width: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body,
+html {
+  min-height: 100vh;
+  background-image: url("images/simone.jpg");
+  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0;
+  background-size: 100%;
 }
 
 h1 {
@@ -20,8 +32,10 @@ h1 {
 
 header {
   display: flex;
-  align-items: flex-end;
-  background-image: url("images/lee-campbell-242267.jpg");
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("images/lee.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -32,11 +46,7 @@ header {
 }
 section {
   display: flex;
-  /*flex-flow: row;*/
   justify-content: center;
-  margin: 0em 2em .5em 10em;
-
-  /*align-items: baseline;*/
 }
 
 ul {
@@ -50,11 +60,13 @@ ul {
 img {
   height: 10em;
   width: 10em;
+  border-radius: 7px;
 }
 
 li {
   margin: .5em;
   display: flex;
+  flex-basis: 25%;
   flex-flow: row;
 }
 
@@ -73,34 +85,64 @@ div {
 
 span {
   font-size: 1.2em;
+  color: #d3d3d3;
 }
 
 input {
-  width: 300px;
+  width: 20em;
   height: 2.5em;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, .5);
   color: white;
   padding-left: .75em;
-  background-color: transparent
 }
 
-input:focus{
-  border: none
+input:focus {
+  border: none;
 }
 
 audio {
-  width: 380px;
-  border-radius: 10px;
+  width: 17em;
+  border-radius: 15px;
 }
 
-button {
-  height: 3em;
-  width: 3em;
-  border-radius: 15px;
-  background-image: url("images/button2.jpg");
-  background-size: contain;
-  position: relative;
-  top: 8px;
-  margin
+.results {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  }
+  h1 {
+    padding-top: 1em;
+    text-align: center;
+    margin: 0;
+  }
+
+  section {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+  .search-info {
+    padding: 0;
+    padding-right: 1em;
+  }
 }
