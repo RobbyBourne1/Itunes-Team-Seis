@@ -11,6 +11,13 @@ let search = input.value
 let url = 'https://itunes.apple.com/search?term='
 input.autofocus = 'on'
 
+// Favorite Query
+let favoriteQuery = []
+let favoriteList = document.querySelector('.player')
+let favoriteButton = document.createElement('button')
+favoriteButton.textContent = 'Favorite List'
+favoriteList.appendChild(favoriteButton)
+
 let searchInput = query => {
   // Search Bar Funtionality
   // console.log(input.value)
@@ -21,7 +28,7 @@ let searchInput = query => {
 
   fetch(searchUrl).then(response => response.json()).then(artist => {
     artist.results.forEach(function(artistData, index) {
-      console.log(artistData)
+      // console.log(artistData)
 
       const gallery = document.createElement('li')
       const artistsLink = document.createElement('a')
@@ -33,6 +40,9 @@ let searchInput = query => {
       artistsImg.src = artistData.artworkUrl100.replace('100x100', '500x500')
       // Pulling aritist name
       artistsTitle.textContent = artistData.artistName
+      // Favorite Button
+      const favorite = document.createElement('button')
+      favorite.textContent = 'Favorite'
 
       //Setting Titles/Names to a certain length
       const name =
@@ -51,6 +61,12 @@ let searchInput = query => {
         audioSource.play()
       })
 
+      favorite.addEventListener('click', event => {
+        event.stopPropagation()
+        let favoriteQuery = gallery
+        console.log(favoriteQuery)
+      })
+
       // Appending Things to page
       displayOfArtists.appendChild(gallery)
       gallery.appendChild(artistsLink)
@@ -59,6 +75,11 @@ let searchInput = query => {
       artistsLink.appendChild(artistAndTrack)
       artistAndTrack.appendChild(artistsTitle)
       artistAndTrack.appendChild(trackName)
+      artistAndTrack.appendChild(favorite)
+
+      favoriteButton.addEventListener('click', event => {
+        // console.log(favoriteQuery)
+      })
     })
   })
 }
