@@ -60,11 +60,11 @@ let searchInput = query => {
         audioSource.setAttribute('src', artistData.previewUrl)
         audioSource.play()
       })
-
+      // Favorite Button Storage
       favorite.addEventListener('click', event => {
         event.stopPropagation()
-        let favoriteQuery = gallery
-        console.log(favoriteQuery)
+        favoriteQuery.push(artistData)
+        // console.log(favoriteQuery)
       })
 
       // Appending Things to page
@@ -76,13 +76,73 @@ let searchInput = query => {
       artistAndTrack.appendChild(artistsTitle)
       artistAndTrack.appendChild(trackName)
       artistAndTrack.appendChild(favorite)
-
-      favoriteButton.addEventListener('click', event => {
-        // console.log(favoriteQuery)
-      })
+      //
+      // favoriteButton.addEventListener('click', event => {
+      //   // console.log(favoriteQuery)
+      // })
     })
   })
 }
+
+function showFavorites(event) {
+  event.preventDefault()
+  console.log(favoriteQuery)
+  displayOfArtists.innerHTML = ''
+  favoriteQuery.forEach(artistData => {
+    const gallery = document.createElement('li')
+    const artistsLink = document.createElement('a')
+    const artistsImg = document.createElement('img')
+    const artistAndTrack = document.createElement('div')
+    const artistsTitle = document.createElement('span')
+    const trackName = document.createElement('span')
+
+    artistsImg.src = artistData.artworkUrl100.replace('100x100', '500x500')
+    // Pulling aritist name
+    artistsTitle.textContent = artistData.artistName
+    // // Unfavorite Button
+    const unFavorite = document.createElement('button')
+    unFavorite.textContent = 'Unfavorite'
+
+    //Setting Titles/Names to a certain length
+    const name =
+      artistData.artistName.length > maxDescLength
+        ? (artistsTitle.textContent = artistData.artistName.slice(0, maxDescLength) + '...')
+        : (artistsTitle.textContent = artistData.artistName)
+
+    const title =
+      artistData.trackName.length > maxDescLength
+        ? (trackName.textContent = artistData.trackName.slice(0, maxDescLength) + '...')
+        : (trackName.textContent = artistData.trackName)
+
+    //Media Player Functionality
+    artistsLink.addEventListener('click', event => {
+      audioSource.setAttribute('src', artistData.previewUrl)
+      audioSource.play()
+    })
+
+    // Unfavorite Button function
+    unFavorite.addEventListener('click', event => {
+      event.stopPropagation()
+      favoriteQuery = favoriteQuery.filter(song => {
+        return song.trackId != artistData.trackId
+      })
+      showFavorites(event)
+    })
+
+    displayOfArtists.appendChild(gallery)
+    gallery.appendChild(artistsLink)
+    artistsLink.appendChild(artistsImg)
+    artistsImg.setAttribute('alt', artistData.trackName)
+    artistsLink.appendChild(artistAndTrack)
+    artistAndTrack.appendChild(artistsTitle)
+    artistAndTrack.appendChild(trackName)
+    artistAndTrack.appendChild(unFavorite)
+  })
+}
+
+favoriteButton.addEventListener('click', event => {
+  showFavorites(event)
+})
 
 form.addEventListener('submit', event => {
   event.stopPropagation()
