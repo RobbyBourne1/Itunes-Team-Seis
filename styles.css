@@ -85,7 +85,7 @@ span {
 }
 
 input {
-  width:20em;
+  width: 20em;
   height: 2.5em;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, .5);
@@ -102,7 +102,6 @@ audio {
   border-radius: 15px;
 }
 
-
 button {
   height: 3em;
   width: 3em;
@@ -113,7 +112,6 @@ button {
   top: 8px;
 }
 
-
 .results {
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.6);
@@ -123,7 +121,6 @@ button {
   height: 100%;
   margin: 0;
   width: 100%;
-
 }
 
 input:focus,
@@ -136,20 +133,17 @@ button:focus {
   header {
     display: flex;
     flex-direction: column;
-    padding: 1em 0.5em 0 3.4em;
     text-align: center;
   }
   h1 {
     width: 100%;
-    padding-top: 2em;
     text-align: center;
   }
 
   ul {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     list-style: none;
-    align-items: center;
     width: 100%;
   }
   section {
@@ -160,5 +154,8 @@ button:focus {
   .search-info {
     padding: 0;
     padding-right: 2em;
+  }
+  li {
+    flex-basis: 20%;
   }
 }
