@@ -16,6 +16,7 @@ let favoriteQuery = []
 let favoriteList = document.querySelector('.player')
 let favoriteButton = document.createElement('button')
 favoriteButton.textContent = 'Favorite List'
+favoriteButton.setAttribute('class', 'favoriteList')
 favoriteList.appendChild(favoriteButton)
 
 let searchInput = query => {
