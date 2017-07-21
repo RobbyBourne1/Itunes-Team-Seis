@@ -1,3 +1,7 @@
+@import
+url(https://fonts.googleapis.com/css?family=Abril+Fatface|Quicksand);
+
+
 body {
   background-color: black;
   color: white;
@@ -8,9 +12,10 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0em 2em .5em 4em;
   text-transform: uppercase;
+  font-family: 'Abril', sans-serif;
 }
 
 header {
@@ -21,7 +26,7 @@ header {
   background-position: center;
   background-size: cover;
   height: 15em;
-  font-family: 'Vast Shadow';
+  font-family: 'Fatface', serif;
   margin: 0;
   width: 100%;
 }
