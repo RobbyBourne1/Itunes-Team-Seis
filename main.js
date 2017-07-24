@@ -69,7 +69,6 @@ const processArtists = artists => {
       })
     } else {
       faveButton.textContent = 'Favorite'
-
       // Favorite Button Storage
       faveButton.addEventListener('click', event => {
         event.stopPropagation()
@@ -77,7 +76,6 @@ const processArtists = artists => {
         // console.log(favoriteQuery)
       })
     }
-
     // Appending Things to page
     displayOfArtists.appendChild(gallery)
     gallery.appendChild(artistsLink)
@@ -87,17 +85,10 @@ const processArtists = artists => {
     artistAndTrack.appendChild(artistsTitle)
     artistAndTrack.appendChild(trackName)
     artistAndTrack.appendChild(faveButton)
-    //
-    // favoriteButton.addEventListener('click', event => {
-    //   // console.log(favoriteQuery)
-    // })
   })
 }
 
 let searchInput = query => {
-  // Search Bar Funtionality
-  // console.log(input.value)
-
   // Completing the search
   let searchUrl = url + query + '&limit=20'
 
