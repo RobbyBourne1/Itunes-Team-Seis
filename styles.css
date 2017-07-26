@@ -5,7 +5,6 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 body,
@@ -15,46 +14,34 @@ html {
     background-color: rgba(0, 0, 0, 0.6);
     background-color: transparent;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 0;
-    background-size: 100%;
+    /*background-attachment: fixed;*/
+    background-position: 0 150px;
+    background-size: cover;
 }
 
 h1 {
     text-align: center;
     font-size: 2.5em;
-    margin: 0em 2em .5em 4em;
+    margin: 0em 0.5em .5em 1em;
     text-transform: uppercase;
     font-family: 'Abril Fatface', sans-serif;
+    padding-right: 16em;
 }
 
 header {
-<<<<<<< HEAD
     display: flex;
+    /*flex-direction: column;*/
     justify-content: center;
     justify-content: space-around;
     align-items: center;
-    background-image: url("images/lee.jpg");
+    background-image: url("images/giphy.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 15em;
+    font-family: 'Vast Shadow';
     margin: 0;
     width: 100%;
-=======
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-  align-items: center;
-  background-image: url("images/giphy.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 15em;
-  font-family: 'Vast Shadow';
-  margin: 0;
-  width: 100%;
->>>>>>> 0fb70ca54e43f6b944f4f0a4ab90420acde56fd3
 }
 section {
     display: flex;
@@ -87,7 +74,7 @@ a {
     flex-flow: wrap;
 }
 
-div {
+div.artistAndTrack {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -108,6 +95,7 @@ input {
     background-color: rgba(0, 0, 0, .5);
     color: white;
     padding-left: .75em;
+    margin-right: 10em;
 }
 
 input:focus {
@@ -115,14 +103,9 @@ input:focus {
 }
 
 audio {
-<<<<<<< HEAD
     width: 17em;
     border-radius: 15px;
-=======
-  width: 17em;
-  border-radius: 15px;
-  margin-top: 2.5em;
->>>>>>> 0fb70ca54e43f6b944f4f0a4ab90420acde56fd3
+    margin-top: 2.5em;
 }
 
 .results {
@@ -142,41 +125,16 @@ button:focus {
 }
 
 .player {
-  display: flex;
-  flex-flow: column;
+    display: flex;
+    flex-flow: column;
 }
 
 .favoriteList {
-  margin: 1em;
+    margin: 1em;
 }
 
 button {
-  margin: 1em;
-}
-
-@media screen and (max-width: 600px) {
-    header {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
-    }
-    h1 {
-        padding-top: 1em;
-        text-align: center;
-        margin: 0;
-    }
-
-    section {
-        display: flex;
-        justify-content: center;
-        margin: 1em;
-    }
-    .search-info {
-        padding: 0;
-        padding-right: 1em;
-    }
+    margin: 1em;
 }
 
 #music {
@@ -184,21 +142,21 @@ button {
 }
 
 #audioplayer {
-    width: 480px;
-    height: 60px;
-    margin: 50px auto auto auto;
     border: solid;
+    position: fixed;
+    padding-right: 2em;
 }
 
 #pButton {
-    height: 60px;
-    width: 60px;
+    height: 3em;
+    width: 3em;
     border: none;
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: center;
     float: left;
     outline: none;
+    padding-bottom: 1px;
 }
 
 .play {
@@ -224,4 +182,43 @@ button {
     border-radius: 50%;
     margin-top: 1px;
     background: rgba(0, 255, 196, 0.82);
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    h1 {
+        padding-top: 1em;
+        text-align: center;
+        margin: 0 0 1em 0em;
+        position: relative;
+        padding-bottom: 1em;
+        padding-right: 1em;
+    }
+
+    #audioplayer {
+        position: fixed;
+        padding-right: 1em;
+        width: 21em;
+        height: 3em;
+    }
+    #audio-timeline {
+        width: 17em;
+        height: 20px;
+        background: grey;
+        margin-top: 20px;
+        float: left;
+        border-radius: 15px;
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        margin: 1em;
+    }
 }
