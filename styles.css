@@ -1,22 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface|Quicksand);
+
 body {
-  background-color: black;
-  color: white;
-  text-shadow: 3px 3px black;
-  height: 100vh;
-  min-width: 100vh;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body,
+html {
+    min-height: 100vh;
+    background-image: url("images/simone.jpg");
+    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0;
+    background-size: 100%;
 }
 
 h1 {
-  text-align: center;
-  font-size: 2em;
-  margin: 0em 2em .5em 4em;
-  text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0em 2em .5em 4em;
+    text-transform: uppercase;
+    font-family: 'Abril Fatface', sans-serif;
 }
 
 header {
+<<<<<<< HEAD
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("images/lee.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 15em;
+    margin: 0;
+    width: 100%;
+=======
   display: flex;
-  align-items: flex-end;
-  background-image: url("images/lee-campbell-242267.jpg");
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("images/giphy.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -24,78 +54,174 @@ header {
   font-family: 'Vast Shadow';
   margin: 0;
   width: 100%;
+>>>>>>> 0fb70ca54e43f6b944f4f0a4ab90420acde56fd3
 }
 section {
-  display: flex;
-  /*flex-flow: row;*/
-  justify-content: center;
-  margin: 0em 2em .5em 10em;
-
-  /*align-items: baseline;*/
+    display: flex;
+    justify-content: center;
 }
 
 ul {
-  display: flex;
-  flex-flow: row wrap;
-  list-style: none;
-  justify-content: center;
-  width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    justify-content: center;
+    width: 100%;
 }
 
 img {
-  height: 10em;
-  width: 10em;
+    height: 10em;
+    width: 10em;
+    border-radius: 7px;
 }
 
 li {
-  margin: .5em;
-  display: flex;
-  flex-flow: row;
+    margin: .5em;
+    display: flex;
+    flex-basis: 25%;
+    flex-flow: row;
 }
 
 a {
-  display: flex;
-  flex-flow: wrap;
+    display: flex;
+    flex-flow: wrap;
 }
 
 div {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25em;
 }
 
 span {
-  font-size: 1.2em;
+    font-size: 1.2em;
+    color: #d3d3d3;
+    font-family: 'Quicksand', serif;
 }
 
 input {
-  width: 300px;
-  height: 2.5em;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding-left: .75em;
-  background-color: transparent
+    width: 20em;
+    height: 2.5em;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    padding-left: .75em;
 }
 
-input:focus{
-  border: none
+input:focus {
+    border: none;
 }
 
 audio {
-  width: 380px;
-  border-radius: 10px;
+<<<<<<< HEAD
+    width: 17em;
+    border-radius: 15px;
+=======
+  width: 17em;
+  border-radius: 15px;
+  margin-top: 2.5em;
+>>>>>>> 0fb70ca54e43f6b944f4f0a4ab90420acde56fd3
+}
+
+.results {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.player {
+  display: flex;
+  flex-flow: column;
+}
+
+.favoriteList {
+  margin: 1em;
 }
 
 button {
-  height: 3em;
-  width: 3em;
-  border-radius: 15px;
-  background-image: url("images/button2.jpg");
-  background-size: contain;
-  position: relative;
-  top: 8px;
-  margin
+  margin: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    h1 {
+        padding-top: 1em;
+        text-align: center;
+        margin: 0;
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        margin: 1em;
+    }
+    .search-info {
+        padding: 0;
+        padding-right: 1em;
+    }
+}
+
+#music {
+    display: none;
+}
+
+#audioplayer {
+    width: 480px;
+    height: 60px;
+    margin: 50px auto auto auto;
+    border: solid;
+}
+
+#pButton {
+    height: 60px;
+    width: 60px;
+    border: none;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    outline: none;
+}
+
+.play {
+    background: url("images/play-512.png") no-repeat;
+}
+
+.pause {
+    background: url("images/pause-512.png") no-repeat;
+}
+
+#audio-timeline {
+    width: 400px;
+    height: 20px;
+    background: grey;
+    margin-top: 20px;
+    float: left;
+    border-radius: 15px;
+}
+
+#playhead {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 1px;
+    background: rgba(0, 255, 196, 0.82);
 }
