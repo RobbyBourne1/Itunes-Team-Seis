@@ -3,7 +3,6 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
 body,
@@ -79,11 +78,6 @@ div {
   padding: 0.25em;
 }
 
-span {
-  font-size: 1.2em;
-  color: #d3d3d3;
-}
-
 input {
   width: 20em;
   height: 2.5em;
@@ -128,6 +122,38 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+footer {
+  background-color: black;
+  font-size: 1.25em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+span:after {
+  content: "Proudy Made by";
+  animation: change 12s infinite;
+}
+@keyframes change {
+  0% {
+    content: "Proudy Made by ";
+  }
+  33% {
+    content: "Lovingly Made by ";
+  }
+  68% {
+    content: "Neurotically Made by ";
+  }
+  100% {
+    content: "Skillfully Made by ";
+  }
 }
 @media screen and (max-width: 600px) {
   header {

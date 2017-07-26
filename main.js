@@ -37,14 +37,12 @@ let searchInput = query => {
       //Setting Titles/Names to a certain length
       const name =
         artistData.artistName.length > maxDescLength
-          ? (artistsTitle.textContent =
-              artistData.artistName.slice(0, maxDescLength) + "...")
+          ? (artistsTitle.textContent = artistData.artistName.slice(0, maxDescLength) + "...")
           : (artistsTitle.textContent = artistData.artistName)
 
       const title =
         artistData.trackName.length > maxDescLength
-          ? (trackName.textContent =
-              artistData.trackName.slice(0, maxDescLength) + "...")
+          ? (trackName.textContent = artistData.trackName.slice(0, maxDescLength) + "...")
           : (trackName.textContent = artistData.trackName)
 
       //Media Player Functionality
