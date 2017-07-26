@@ -29,6 +29,7 @@ h1 {
 }
 
 header {
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     justify-content: space-around;
@@ -40,6 +41,20 @@ header {
     height: 15em;
     margin: 0;
     width: 100%;
+=======
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("images/giphy.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 15em;
+  font-family: 'Vast Shadow';
+  margin: 0;
+  width: 100%;
+>>>>>>> 0fb70ca54e43f6b944f4f0a4ab90420acde56fd3
 }
 section {
     display: flex;
@@ -100,8 +115,14 @@ input:focus {
 }
 
 audio {
+<<<<<<< HEAD
     width: 17em;
     border-radius: 15px;
+=======
+  width: 17em;
+  border-radius: 15px;
+  margin-top: 2.5em;
+>>>>>>> 0fb70ca54e43f6b944f4f0a4ab90420acde56fd3
 }
 
 .results {
@@ -118,6 +139,19 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+
+.player {
+  display: flex;
+  flex-flow: column;
+}
+
+.favoriteList {
+  margin: 1em;
+}
+
+button {
+  margin: 1em;
 }
 
 @media screen and (max-width: 600px) {
