@@ -25,7 +25,6 @@ h1 {
   margin: 0em 0.5em .5em 1em;
   text-transform: uppercase;
   font-family: 'Abril Fatface', sans-serif;
-  padding-right: 16em;
 }
 
 header {
@@ -80,12 +79,6 @@ div.artistAndTrack {
   align-items: center;
   justify-content: center;
   padding: 0.25em;
-}
-
-span {
-  font-size: 1.2em;
-  color: #d3d3d3;
-  font-family: 'Quicksand', serif;
 }
 
 input {
@@ -143,7 +136,6 @@ button {
 
 #audioplayer {
   border: solid;
-  position: fixed;
   padding-right: 2em;
 }
 
@@ -186,7 +178,7 @@ button {
 
 footer {
   background-color: black;
-  font-size: 120%;
+  font-size: 110%;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   display: flex;
@@ -236,7 +228,7 @@ span:after {
   #audioplayer {
     position: fixed;
     padding-right: 1em;
-    width: 21em;
+    */: 21em;
     height: 3em;
   }
   #audio-timeline {
