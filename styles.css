@@ -115,6 +115,7 @@ audio {
   background-position: center;
   background-size: cover;
   margin: 0;
+  padding: 1.5em;
 }
 
 input:focus,
@@ -197,7 +198,7 @@ footer {
   left: 0;
   right: 0;
 }
-span:after {
+.footer:after {
   content: "Proudy Made by";
   animation: change 12s infinite;
 }
