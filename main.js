@@ -30,17 +30,17 @@ playhead.addEventListener('click', timeUpdate, false)
 music.addEventListener('timeupdate', timeUpdate, false)
 
 function timeUpdate() {
-    console.log('wut wut')
-    var playPercent = 100 * (music.currentTime / duration)
-    playhead.style.marginLeft = playPercent + '%'
+  console.log('wut wut')
+  var playPercent = 100 * (music.currentTime / duration)
+  playhead.style.marginLeft = playPercent + '%'
 }
 // Gets audio file duration
 music.addEventListener(
-    'canplaythrough',
-    function() {
-        duration = music.duration //this can be changed via iTunes API to appropriate name
-    },
-    false
+  'canplaythrough',
+  function() {
+    duration = music.duration //this can be changed via iTunes API to appropriate name
+  },
+  false
 )
 
 //allows pButton to be clicked and activates playAudio function
@@ -48,46 +48,46 @@ pButton.addEventListener('click', playAudio)
 
 //changes the png based on whether the audio plays/pauses
 function playAudio() {
-    if (music.paused) {
-        music.play()
-        pButton.className = ''
-        pButton.className = 'pause'
-    } else {
-        music.pause()
-        pButton.className = ''
-        pButton.className = 'play'
-    }
+  if (music.paused) {
+    music.play()
+    pButton.className = ''
+    pButton.className = 'pause'
+  } else {
+    music.pause()
+    pButton.className = ''
+    pButton.className = 'play'
+  }
 }
 
 //adds event listener to audioTimeline
 audioTimeline.addEventListener('click', event => {
-    moveplayhead(event)
-    music.currentTime = duration * clickPercent(event)
+  moveplayhead(event)
+  music.currentTime = duration * clickPercent(event)
 })
 
 //this will return the click position as a decimal of the total timelineWidth
 function clickPercent(event) {
-    return (event.clientX - getPosition(audioTimeline)) / timelineWidth
+  return (event.clientX - getPosition(audioTimeline)) / timelineWidth
 }
 
 //this will move the playhead around based on length of song playing
 function moveplayhead(event) {
-    var newMargLeft = event.clientX - getPosition(audioTimeline)
+  var newMargLeft = event.clientX - getPosition(audioTimeline)
 
-    if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
-        playhead.style.marginLeft = newMargLeft + 'px'
-    }
-    if (newMargLeft < 0) {
-        playhead.style.marginLeft = '0px'
-    }
-    if (newMargLeft > timelineWidth) {
-        playhead.style.marginLeft = timelineWidth + 'px'
-    }
+  if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+    playhead.style.marginLeft = newMargLeft + 'px'
+  }
+  if (newMargLeft < 0) {
+    playhead.style.marginLeft = '0px'
+  }
+  if (newMargLeft > timelineWidth) {
+    playhead.style.marginLeft = timelineWidth + 'px'
+  }
 }
 
 // Returns elements left position relative to top-left of viewport
 function getPosition(event) {
-    return event.getBoundingClientRect().left
+  return event.getBoundingClientRect().left
 }
 
 // Favorite Query
@@ -99,107 +99,108 @@ favoriteButton.setAttribute('class', 'favoriteList')
 favoriteList.appendChild(favoriteButton)
 
 const processArtists = artists => {
-    displayOfArtists.innerHTML = ''
-    artists.forEach(function(artistData, index) {
-        // console.log(artistData)
+  displayOfArtists.innerHTML = ''
+  artists.forEach(function(artistData, index) {
+    // console.log(artistData)
 
-        const gallery = document.createElement('li')
-        const artistsLink = document.createElement('a')
-        const artistsImg = document.createElement('img')
-        const artistAndTrack = document.createElement('div')
-        const artistsTitle = document.createElement('span')
-        const trackName = document.createElement('span')
-        // Replacing pic URL's px size and pulling Pics
-        artistsImg.src = artistData.artworkUrl100.replace('100x100', '500x500')
-        // Pulling aritist name
-        artistsTitle.textContent = artistData.artistName
+    const gallery = document.createElement('li')
+    const artistsLink = document.createElement('a')
+    const artistsImg = document.createElement('img')
+    const artistAndTrack = document.createElement('div')
+    const artistsTitle = document.createElement('span')
+    const trackName = document.createElement('span')
+    // Replacing pic URL's px size and pulling Pics
+    artistsImg.src = artistData.artworkUrl100.replace('100x100', '500x500')
+    // Pulling aritist name
+    artistsTitle.textContent = artistData.artistName
 
-        //Setting Titles/Names to a certain length
-        const name =
-            artistData.artistName.length > maxDescLength
-                ? (artistsTitle.textContent = artistData.artistName.slice(0, maxDescLength) + '...')
-                : (artistsTitle.textContent = artistData.artistName)
+    //Setting Titles/Names to a certain length
+    const name =
+      artistData.artistName.length > maxDescLength
+        ? (artistsTitle.textContent = artistData.artistName.slice(0, maxDescLength) + '...')
+        : (artistsTitle.textContent = artistData.artistName)
 
-        const title =
-            artistData.trackName.length > maxDescLength
-                ? (trackName.textContent = artistData.trackName.slice(0, maxDescLength) + '...')
-                : (trackName.textContent = artistData.trackName)
+    const title =
+      artistData.trackName.length > maxDescLength
+        ? (trackName.textContent = artistData.trackName.slice(0, maxDescLength) + '...')
+        : (trackName.textContent = artistData.trackName)
 
-        //Media Player Functionality
-        artistsLink.addEventListener('click', event => {
-            audioSource.setAttribute('src', artistData.previewUrl)
-            audioSource.play()
-        })
-
-        // Favorite Button
-        const isFavorited = favoriteQuery.find(data => data.previewUrl === artistData.previewUrl)
-
-        const faveButton = document.createElement('button')
-        if (isFavorited) {
-            faveButton.textContent = 'Unfavorite'
-
-            // Unfavorite Button function
-            faveButton.addEventListener('click', event => {
-                event.stopPropagation()
-                favoriteQuery = favoriteQuery.filter(song => {
-                    return song.trackId != artistData.trackId
-                })
-                showFavorites(event)
-            })
-        } else {
-            faveButton.textContent = 'Favorite'
-
-            // Favorite Button Storage
-            faveButton.addEventListener('click', event => {
-                event.stopPropagation()
-                favoriteQuery.push(artistData)
-                // console.log(favoriteQuery)
-            })
-        }
-
-        // Appending Things to page
-        displayOfArtists.appendChild(gallery)
-        gallery.appendChild(artistsLink)
-        artistsLink.appendChild(artistsImg)
-        artistsImg.setAttribute('alt', artistData.trackName)
-        artistsLink.appendChild(artistAndTrack)
-        artistAndTrack.appendChild(artistsTitle)
-        artistAndTrack.appendChild(trackName)
-        artistAndTrack.appendChild(faveButton)
-        //
-        // favoriteButton.addEventListener('click', event => {
-        //   // console.log(favoriteQuery)
-        // })
+    //Media Player Functionality
+    artistsLink.addEventListener('click', event => {
+      audioSource.setAttribute('src', artistData.previewUrl)
+      audioSource.play()
     })
+
+    // Favorite Button
+    const isFavorited = favoriteQuery.find(data => data.previewUrl === artistData.previewUrl)
+
+    const faveButton = document.createElement('button')
+    if (isFavorited) {
+      faveButton.textContent = 'Unfavorite'
+
+      // Unfavorite Button function
+      faveButton.addEventListener('click', event => {
+        event.stopPropagation()
+        favoriteQuery = favoriteQuery.filter(song => {
+          return song.trackId != artistData.trackId
+        })
+        showFavorites(event)
+      })
+    } else {
+      faveButton.textContent = 'Favorite'
+
+      // Favorite Button Storage
+      faveButton.addEventListener('click', event => {
+        event.stopPropagation()
+        favoriteQuery.push(artistData)
+        // console.log(favoriteQuery)
+      })
+    }
+
+    // Appending Things to page
+    displayOfArtists.appendChild(gallery)
+    gallery.appendChild(artistsLink)
+    artistsLink.appendChild(artistsImg)
+    artistsImg.setAttribute('alt', artistData.trackName)
+    artistsLink.appendChild(artistAndTrack)
+    artistAndTrack.setAttribute('class', 'artistAndTrack')
+    artistAndTrack.appendChild(artistsTitle)
+    artistAndTrack.appendChild(trackName)
+    artistAndTrack.appendChild(faveButton)
+    //
+    // favoriteButton.addEventListener('click', event => {
+    //   // console.log(favoriteQuery)
+    // })
+  })
 }
 
 let searchInput = query => {
-    // Search Bar Funtionality
-    // console.log(input.value)
+  // Search Bar Funtionality
+  // console.log(input.value)
 
-    // Completing the search
-    let searchUrl = url + query + '&limit=20'
+  // Completing the search
+  let searchUrl = url + query + '&limit=20'
 
-    fetch(searchUrl).then(response => response.json()).then(data => processArtists(data.results))
+  fetch(searchUrl).then(response => response.json()).then(data => processArtists(data.results))
 }
 
 function showFavorites(event) {
-    processArtists(favoriteQuery)
-    event.preventDefault()
+  processArtists(favoriteQuery)
+  event.preventDefault()
 }
 
 favoriteButton.addEventListener('click', event => {
-    showFavorites(event)
+  showFavorites(event)
 })
 
 form.addEventListener('submit', event => {
-    event.stopPropagation()
-    event.preventDefault()
-    searchInput(search)
+  event.stopPropagation()
+  event.preventDefault()
+  searchInput(search)
 })
 
 input.addEventListener('keyup', event => {
-    searchInput(input.value)
+  searchInput(input.value)
 })
 
 // searchButton.addEventListener("click", function(){
