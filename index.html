@@ -7,11 +7,19 @@
 <body>
     <header>
       <h1>Tunes By Ocho</h1>
-    <section class="player">
-      <audio class="music-player" controls="controls" src="#"></audio>
-    </section>
+      <audio id="music" controls="controls" src="#"></audio>
+
+      <div id="audioplayer">
+          <button id="pButton" class="play"></button>
+          <div id="audio-timeline">
+              <div id="playhead"></div>
+          </div>
+      </div>
+      <div class="player"></div>
     <section class="search">
+
       <form class="search-form">
+
         <input type="text" placeholder="Artist" name="search" value="" id ="search-bar">
       </form>
       <!-- <hr> -->
@@ -32,7 +40,7 @@
         </li> -->
       </ul>
     </section>
-    <!-- <footer> proudly made by cohort 8 students</footer> -->
+    <footer> <span> </span>&nbsp  Cohort 8 Students Cody, Miguel, Garret, Robby, Javi,  and Bree </footer> 
   <script src="main.js"></script>
 </body>
 </html>
