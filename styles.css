@@ -25,12 +25,11 @@ h1 {
   margin: 0em 0.5em .5em 1em;
   text-transform: uppercase;
   font-family: 'Abril Fatface', sans-serif;
-  padding-right: 16em;
 }
 
 header {
   display: flex;
-  /*flex-direction: column;*/
+  flex-direction: column;
   justify-content: center;
   justify-content: space-around;
   align-items: center;
@@ -65,13 +64,13 @@ img {
 li {
   margin: .5em;
   display: flex;
-  flex-basis: 25%;
+  flex-basis: 20%;
   flex-flow: row;
 }
 
 a {
   display: flex;
-  flex-flow: wrap;
+  flex-flow: column wrap;
 }
 
 div.artistAndTrack {
@@ -80,12 +79,6 @@ div.artistAndTrack {
   align-items: center;
   justify-content: center;
   padding: 0.25em;
-}
-
-span {
-  font-size: 1.2em;
-  color: #d3d3d3;
-  font-family: 'Quicksand', serif;
 }
 
 input {
@@ -115,6 +108,7 @@ audio {
   background-position: center;
   background-size: cover;
   margin: 0;
+  padding: 1.5em;
 }
 
 input:focus,
@@ -131,6 +125,8 @@ button:focus {
 
 .favoriteList {
   margin: 1em;
+  padding: .5em 3em;
+  border-radius: 5%;
 }
 
 button {
@@ -141,22 +137,26 @@ button {
   display: none;
 }
 
+.player {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
 #audioplayer {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
   border: solid;
-  position: fixed;
-  padding-right: 2em;
 }
 
 #pButton {
   height: 3em;
   width: 3em;
   border: none;
-  background-size: 50% 50%;
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
-  float: left;
-  outline: none;
-  padding-bottom: 1px;
 }
 
 .play {
@@ -168,25 +168,22 @@ button {
 }
 
 #audio-timeline {
-  width: 400px;
-  height: 20px;
+  width: 20em;
   background: grey;
-  margin-top: 20px;
-  float: left;
   border-radius: 15px;
+  margin-right: 1.5em;
 }
 
 #playhead {
-  width: 18px;
-  height: 18px;
+  width: 1.2em;
+  height: 1.2em;
   border-radius: 50%;
-  margin-top: 1px;
   background: rgba(0, 255, 196, 0.82);
 }
 
 footer {
   background-color: black;
-  font-size: 120%;
+  font-size: 110%;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   display: flex;
@@ -197,7 +194,7 @@ footer {
   left: 0;
   right: 0;
 }
-span:after {
+.footer:after {
   content: "Proudy Made by";
   animation: change 12s infinite;
 }
@@ -216,42 +213,46 @@ span:after {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   header {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding: 1em;
   }
   h1 {
-    padding-top: 1em;
     text-align: center;
-    margin: 0 0 1em 0em;
-    position: relative;
-    padding-bottom: 1em;
-    padding-right: 1em;
+  }
+
+  .player {
+    margin: 0;
   }
 
   #audioplayer {
-    position: fixed;
-    padding-right: 1em;
-    width: 21em;
-    height: 3em;
+    width: 20em;
+    height: 2em;
   }
   #audio-timeline {
-    width: 17em;
-    height: 20px;
+    width: 18em;
+    height: 1.2em;
     background: grey;
-    margin-top: 20px;
-    float: left;
     border-radius: 15px;
   }
-
+  .favoriteList {
+    padding: .5em;
+  }
+  #pButton {
+    margin: 0;
+    padding: 0;
+    background-size: 80%;
+  }
   section {
     display: flex;
     justify-content: center;
-    margin: 1em;
+  }
+
+  input {
+    margin: 0;
   }
 
   footer {
