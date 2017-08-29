@@ -81,12 +81,6 @@ div.artistAndTrack {
   padding: 0.25em;
 }
 
-span {
-  font-size: 1.2em;
-  color: #d3d3d3;
-  font-family: 'Quicksand', serif;
-}
-
 input {
   width: 20em;
   height: 2.5em;
@@ -188,7 +182,7 @@ button {
 
 footer {
   background-color: black;
-  font-size: 120%;
+  font-size: 110%;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   display: flex;
@@ -236,6 +230,7 @@ footer {
   #audioplayer {
     width: 20em;
     height: 2em;
+
   }
   #audio-timeline {
     width: 18em;
